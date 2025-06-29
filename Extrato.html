@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato de Pontos - EcoRio Preto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/FaviconGlobo.png" type="image/x-icon">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="PainelEscola.html" class="logo">EcoRio Preto</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <nav>
+                <ul>
+                    <li><a href="PainelEscola.html">Painel</a></li>
+                    <li><a href="Extrato.html" class="active">Extrato</a></li>
+                    <li><a href="Registrar.html">Registrar Ação</a></li>
+                    <li><a href="recompensas.html">Recompensas</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="Login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-header">
+            <h1>Extrato de Pontos</h1>
+            <p>Acompanhe em detalhes todo o seu histórico de pontuações.</p>
+        </div>
+
+        <div class="card">
+            <div class="table-responsive">
+                <div class="extrato-header">
+                    <h3>Filtrar por Período</h3>
+                    <div class="filtros">
+                        <input type="date" id="data-inicio">
+                        <span>até</span>
+                        <input type="date" id="data-fim">
+                        <button class="btn-secundario">Filtrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="tabela-extrato">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição da Atividade</th>
+                            <th>Pontos</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>27/06/2025</td>
+                            <td>Coleta de 42kg de Plástico</td>
+                            <td class="pontos-positivos">+ 420</td>
+                            <td><span class="status status-aprovado">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>25/06/2025</td>
+                            <td>Ação de Plantio de 5 Árvores</td>
+                            <td class="pontos-positivos">+ 500</td>
+                            <td><span class="status status-aprovado">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>22/06/2025</td>
+                            <td>Coleta de 15kg de Vidro</td>
+                            <td class="pontos-positivos">+ 150</td>
+                            <td><span class="status status-aprovado">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>20/06/2025</td>
+                            <td>Coleta de 28kg de Papel</td>
+                            <td class="pontos-positivos">+ 280</td>
+                            <td><span class="status status-aprovado">Aprovado</span></td>
+                        </tr>
+                         <tr>
+                            <td>19/06/2025</td>
+                            <td>Registro de Palestra de Conscientização</td>
+                            <td class="pontos-pendentes">+ 200</td>
+                            <td><span class="status status-analise">Em Análise</span></td>
+                        </tr>
+                        <tr>
+                            <td>18/06/2025</td>
+                            <td>Denúncia de Descarte Irregular</td>
+                            <td class="pontos-positivos">+ 100</td>
+                            <td><span class="status status-aprovado">Aprovado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

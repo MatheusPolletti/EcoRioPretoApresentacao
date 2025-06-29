@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Ação - EcoRio Preto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/FaviconGlobo.png" type="image/x-icon">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="PainelEscola.html" class="logo">EcoRio Preto</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <nav>
+                <ul>
+                    <li><a href="PainelEscola.html">Painel</a></li>
+                    <li><a href="Extrato.html">Extrato</a></li>
+                    <li><a href="Registrar.html" class="active">Registrar Ação</a></li>
+                    <li><a href="recompensas.html">Recompensas</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="Login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-header">
+            <h1>Registrar Nova Ação</h1>
+            <p>Envie suas ações para ganhar mais pontos e subir no ranking!</p>
+        </div>
+
+        <div class="card">
+            <form class="form-registro">
+                <div class="form-group">
+                    <label for="tipo-acao">Tipo de Ação</label>
+                    <select id="tipo-acao" name="tipo-acao">
+                        <option value="">-- Selecione uma opção --</option>
+                        <option value="plantio">Plantio de Árvores</option>
+                        <option value="denuncia">Denúncia de Descarte Irregular</option>
+                        <option value="palestra">Palestra de Conscientização</option>
+                        <option value="outro">Outra Ação Ecológica</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-acao">Data da Ação</label>
+                    <input type="date" id="data-acao" name="data-acao">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição Detalhada</label>
+                    <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva a ação realizada, incluindo local, número de participantes, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="comprovante">Anexar Comprovação (Fotos, Documentos)</label>
+                    <input type="file" id="comprovante" name="comprovante" class="input-file">
+                    <label for="comprovante" class="btn-file">Escolher Arquivo</label>
+                    <span id="file-name" class="file-name-display">Nenhum arquivo selecionado</span>
+                </div>
+
+                <div class="form-group-submit">
+                    <button type="submit" class="btn-principal">Enviar para Análise</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const fileInput = document.getElementById('comprovante');
+        const fileNameDisplay = document.getElementById('file-name');
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = fileInput.files[0].name;
+            } else {
+                fileNameDisplay.textContent = 'Nenhum arquivo selecionado';
+            }
+        });
+    </script>
+</body>
+</html>

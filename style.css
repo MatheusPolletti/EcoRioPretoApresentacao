@@ -1,0 +1,811 @@
+/* Definição de variáveis de cor para fácil manutenção */
+:root {
+    --verde-profundo: #3D8C6C;
+    --verde-hover: #317559;
+    --cinza-grafite: #212529;
+    --cinza-claro: #6c757d;
+    --branco-puro: #FFFFFF;
+    --fundo-pagina: #f4f7f6;
+    --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Reset básico e configuração da fonte */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo-pagina);
+    color: var(--cinza-grafite);
+    line-height: 1.6;
+    padding-bottom: 3vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos da Barra de Navegação (Navbar) */
+.navbar {
+    background-color: var(--verde-profundo);
+    color: var(--branco-puro);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--branco-puro);
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: var(--branco-puro);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Estilos do Conteúdo Principal */
+.main-header {
+    padding: 40px 0;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    color: var(--cinza-claro);
+}
+
+/* Estilos do Dashboard e dos Cards */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+.card {
+    background-color: var(--branco-puro);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--cinza-grafite);
+}
+
+/* Estilos específicos dos cards */
+.card-pontos, .card-ranking {
+    text-align: center;
+}
+
+.numero-destaque {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--verde-profundo);
+    line-height: 1;
+}
+
+.card p {
+    color: var(--cinza-claro);
+    font-size: 1rem;
+}
+
+.card-acao {
+    background: linear-gradient(135deg, var(--verde-profundo), #2E8B57);
+    color: var(--branco-puro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-acao h2, .card-acao p {
+    color: var(--branco-puro);
+}
+
+.btn-principal {
+    text-decoration: none;
+    background-color: var(--branco-puro);
+    color: var(--verde-profundo);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #eef5f2;
+}
+
+.grafico-svg {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.card-atividades ul {
+    list-style: none;
+}
+
+.card-atividades li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.card-atividades li:last-child {
+    border-bottom: none;
+}
+
+.card-atividades .pontos {
+    font-weight: 700;
+    color: var(--verde-profundo);
+}
+
+/* ============================================== */
+/* ESTILOS DA PÁGINA DE EXTRATO                   */
+/* ============================================== */
+
+.extrato-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap; /* Para telas menores */
+    gap: 15px;
+}
+
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtros input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-secundario {
+    background-color: #e9ecef;
+    color: var(--cinza-grafite);
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #dee2e6;
+}
+
+.tabela-extrato {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-extrato th, .tabela-extrato td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-extrato thead {
+    background-color: var(--fundo-pagina);
+}
+
+.tabela-extrato th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cinza-claro);
+    text-transform: uppercase;
+}
+
+.pontos-positivos {
+    color: var(--verde-profundo);
+    font-weight: 700;
+}
+
+.pontos-pendentes {
+    color: var(--cinza-claro);
+    font-weight: 700;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.status-aprovado {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-analise {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.table-responsive {
+    overflow-x: auto; /* Adiciona a barra de rolagem horizontal quando necessário */
+}
+
+/* ============================================== */
+/* ESTILOS DA PÁGINA DE FORMULÁRIO (REGISTRAR)    */
+/* ============================================== */
+
+.form-registro .form-group {
+    margin-bottom: 25px;
+}
+
+.form-registro label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-registro input[type="text"],
+.form-registro input[type="date"],
+.form-registro select,
+.form-registro textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s ease;
+}
+
+.form-registro input:focus,
+.form-registro select:focus,
+.form-registro textarea:focus {
+    outline: none;
+    border-color: var(--verde-profundo);
+}
+
+/* Estilização customizada para o botão de upload */
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-file {
+    background-color: #e9ecef;
+    color: var(--cinza-grafite);
+    border: 1px solid #ccc;
+    padding: 12px 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.btn-file:hover {
+    background-color: #dee2e6;
+}
+
+.file-name-display {
+    margin-left: 15px;
+    color: var(--cinza-claro);
+    font-style: italic;
+}
+
+.form-group-submit {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.form-group-submit .btn-principal {
+    min-width: 200px;
+    font-size: 1.1rem;
+    padding: 15px 24px;
+}
+
+/* ============================================== */
+/* ESTILOS DA PÁGINA DE RECOMPENSAS               */
+/* ============================================== */
+
+.status-card {
+    background: linear-gradient(135deg, var(--verde-profundo), #2E8B57);
+    color: var(--branco-puro);
+    margin-bottom: 40px;
+}
+
+.status-card h2 {
+    color: var(--branco-puro);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.status-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.status-item span {
+    display: block;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.status-item strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.progress-info {
+    text-align: center;
+}
+
+.progress-bar-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    height: 20px;
+    margin-top: 10px;
+    overflow: hidden; /* Garante que a barra interna fique contida */
+}
+
+.progress-bar {
+    background-color: #FFB347; /* Cor de destaque para a barra */
+    height: 100%;
+    border-radius: 20px;
+    text-align: right;
+    color: white;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+}
+
+.premios-section {
+    margin-bottom: 40px;
+}
+
+.premios-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.premios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.premio-card {
+    background-color: var(--branco-puro);
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden; /* Garante que a imagem e a tag fiquem contidas */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necessário para a tag de prêmio */
+}
+
+.premio-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.premio-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz com que o corpo ocupe o espaço restante */
+}
+
+.premio-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.premio-body p {
+    color: var(--cinza-claro);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.premio-body strong {
+    color: var(--verde-profundo);
+    font-weight: 700;
+}
+
+.premio-tag {
+    position: absolute;
+    top: 15px;
+    left: -5px; /* Efeito da fita saindo da borda */
+    padding: 5px 15px 5px 20px;
+    color: var(--branco-puro);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.premio-tag.ouro { background-color: #ffc107; }
+.premio-tag.prata { background-color: #adb5bd; }
+.premio-tag.bronze { background-color: #cd7f32; }
+
+.galeria-conquistas h2 {
+    margin-bottom: 20px;
+}
+
+.galeria-conquistas ul {
+    list-style: none;
+}
+
+.galeria-conquistas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--fundo-pagina);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.galeria-conquistas li span {
+    font-weight: 600;
+}
+
+.galeria-conquistas li small {
+    color: var(--cinza-claro);
+}
+
+/* ============================================== */
+/* ESTILOS DA PÁGINA DE RANKING                   */
+/* ============================================== */
+
+.ranking-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Começa com uma coluna em mobile */
+    gap: 25px;
+}
+
+/* Em telas maiores, divide em 2 colunas */
+@media (min-width: 992px) {
+    .ranking-layout {
+        /* A primeira coluna (tabela) ocupa 2/3 e a segunda (destaques) 1/3 */
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+#busca-escola {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    min-width: 200px; /* Garante um tamanho mínimo */
+}
+
+.tabela-ranking {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-ranking th, .tabela-ranking td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-ranking thead {
+    background-color: var(--fundo-pagina);
+}
+
+.tabela-ranking th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cinza-claro);
+    text-transform: uppercase;
+}
+
+.tabela-ranking tbody tr:nth-child(even) {
+    background-color: var(--fundo-pagina);
+}
+
+/* Estilo de destaque para a linha da escola do usuário */
+.tabela-ranking tr.minha-escola {
+    background-color: #d4edda; /* Um verde claro para destaque */
+    font-weight: 700;
+}
+
+.tabela-ranking tr.minha-escola td {
+    color: #155724; /* Um verde escuro para o texto */
+}
+
+.variacao {
+    font-weight: 700;
+    text-align: center;
+}
+
+.variacao.subiu {
+    color: #28a745; /* Verde para subida */
+}
+
+.variacao.desceu {
+    color: #dc3545; /* Vermelho para descida */
+}
+
+.variacao.neutra {
+    color: var(--cinza-claro);
+}
+
+.ranking-destaques-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.destaque-card {
+    text-align: center;
+    padding: 25px;
+}
+
+.destaque-card p {
+    font-size: 1.1rem;
+    color: var(--verde-profundo);
+    margin-bottom: 5px;
+}
+
+.destaque-card small {
+    font-size: 0.9rem;
+    color: var(--cinza-claro);
+}
+
+/* ============================================== */
+/* ESTILOS DA PÁGINA MEU PERFIL                   */
+/* ============================================== */
+
+.perfil-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna em mobile */
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Em telas maiores, divide em 2 colunas */
+@media (min-width: 992px) {
+    .perfil-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-perfil .form-group {
+    margin-bottom: 20px;
+}
+
+.form-perfil input:disabled {
+    background-color: var(--fundo-pagina);
+    cursor: not-allowed;
+}
+
+.form-perfil .btn-principal {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+/* Estilos do Avatar */
+.perfil-avatar {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.perfil-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--branco-puro);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-avatar {
+    background-color: var(--verde-profundo);
+    color: var(--branco-puro);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.2s;
+}
+
+.btn-avatar:hover {
+    background-color: var(--verde-hover);
+}
+
+
+/* Estilos da Zona de Perigo */
+.danger-zone {
+    border: 2px solid #f5c6cb;
+    background-color: #f8d7da;
+}
+
+.danger-zone h3 {
+    color: #721c24;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.danger-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para telas menores */
+    gap: 20px;
+}
+
+.danger-action p {
+    flex-grow: 1;
+    color: #721c24;
+}
+
+.btn-danger {
+    background-color: transparent;
+    color: #721c24;
+    border: 2px solid #721c24;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #721c24;
+    color: var(--branco-puro);
+}
+
+
+/* ============================================== */
+/* ESTILOS DO MENU RESPONSIVO (HAMBÚRGUER)        */
+/* ============================================== */
+
+/* Esconde o checkbox real */
+.menu-toggle {
+    display: none;
+}
+
+/* Estiliza a label para parecer um ícone de hambúrguer */
+.hamburger-menu {
+    display: none; /* Só vai aparecer em telas pequenas */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima de outros elementos */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--branco-puro);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --- A MÁGICA ACONTECE AQUI (Media Query) --- */
+/* Estilos aplicados APENAS em telas com largura máxima de 768px */
+@media (max-width: 768px) {
+    /* Mostra o ícone de hambúrguer */
+    .hamburger-menu {
+        display: flex;
+        margin-left: auto; /* Empurra o menu para a direita */
+    }
+
+    /* Esconde a navegação original e a prepara para aparecer */
+    .navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        
+        position: fixed;
+        top: 0;
+        right: 0;
+        
+        width: 100%;
+        height: 100vh;
+
+        background-color: var(--verde-profundo);
+        
+        /* ADICIONE ESTA LINHA ABAIXO */
+        z-index: 1000; /* Define a ordem de empilhamento para ficar no topo */
+        
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar nav a {
+        font-size: 1.5rem;
+    }
+
+    /* QUANDO O CHECKBOX ESTÁ MARCADO (clicado)... */
+    .menu-toggle:checked ~ nav ul {
+        /* ...o menu desliza para dentro da tela */
+        transform: translateX(0);
+    }
+    
+    /* Animação do hambúrguer para um "X" quando o menu está aberto */
+    .menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da Escola - EcoRio Preto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/FaviconGlobo.png" type="image/x-icon">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="PainelEscola.html" class="logo">EcoRio Preto</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <nav>
+                <ul>
+                    <li><a href="PainelEscola.html" class="active">Painel</a></li>
+                    <li><a href="Extrato.html">Extrato</a></li>
+                    <li><a href="Registrar.html">Registrar Ação</a></li>
+                    <li><a href="recompensas.html">Recompensas</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="perfil.html">Meu Perfil</a></li>
+                    <li><a href="Login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-header">
+            <h1>Painel de Controle</h1>
+            <p>Bem-vinda, Escola Municipal Futuro Melhor</p>
+        </div>
+
+        <section class="dashboard">
+            <div class="card card-pontos">
+                <h2>Sua Pontuação Atual</h2>
+                <div class="numero-destaque">12.540</div>
+                <p>pontos</p>
+            </div>
+
+            <div class="card card-ranking">
+                <h2>Sua Posição no Ranking</h2>
+                <div class="numero-destaque">#2</div>
+                <p>de 68 escolas</p>
+            </div>
+            
+            <div class="card card-acao">
+                <h2>Pronto para somar mais pontos?</h2>
+                <p>Registre outras ações ecológicas e suba no ranking!</p>
+                <a href="Registrar.html" class="btn-principal">+ Registrar Nova Ação</a>
+            </div>
+            
+            <div class="card card-grafico">
+                <h2>Evolução da Pontuação</h2>
+                <p>(Últimos 30 dias)</p>
+                <svg viewBox="0 0 100 50" class="grafico-svg">
+                    <polyline fill="none" stroke="var(--verde-profundo)" stroke-width="2"
+                        points="
+                        0,45
+                        10,40
+                        20,35
+                        30,38
+                        40,30
+                        50,25
+                        60,20
+                        70,15
+                        80,18
+                        90,10
+                        100,5" />
+                </svg>
+            </div>
+            
+            <div class="card card-atividades">
+                <h2>Atividade Recente</h2>
+                <ul>
+                    <li>
+                        <span>✅ Coleta de Plástico</span>
+                        <span class="pontos">+ 420 pts</span>
+                    </li>
+                    <li>
+                        <span>✅ Plantio de 5 Árvores (Aprovado)</span>
+                        <span class="pontos">+ 500 pts</span>
+                    </li>
+                    <li>
+                        <span>✅ Coleta de Papel</span>
+                        <span class="pontos">+ 280 pts</span>
+                    </li>
+                     <li>
+                        <span>✅ Denúncia de Descarte (Aprovado)</span>
+                        <span class="pontos">+ 100 pts</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
