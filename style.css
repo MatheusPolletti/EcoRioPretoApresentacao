@@ -540,6 +540,9 @@ body {
 
 .tabela-ranking {
     width: 100%;
+
+    min-width: 600px;
+
     border-collapse: collapse;
 }
 
