@@ -511,38 +511,58 @@ body {
 .galeria-conquistas li small {
     color: var(--cinza-claro);
 }
-
 /* ============================================== */
-/* ESTILOS DA PÁGINA DE RANKING                   */
+/* ESTILOS DA PÁGINA DE RANKING (VERSÃO CORRIGIDA) */
 /* ============================================== */
 
 .ranking-layout {
     display: grid;
-    grid-template-columns: 1fr; /* Começa com uma coluna em mobile */
+    grid-template-columns: 1fr;
     gap: 25px;
 }
 
-/* Em telas maiores, divide em 2 colunas */
+/* 1. O container do grid precisa ser capaz de encolher */
+.ranking-tabela-container {
+    min-width: 0;
+}
+
+/* 2. O card precisa permitir que o conteúdo interno role */
+/* Essa regra é nova e crucial */
+.ranking-tabela-container .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Esconde qualquer overflow do card em si */
+}
+
+/* 3. A div da tabela é quem ganha a rolagem */
+/* Essa regra também é nova e mais específica */
+.ranking-tabela-container .table-responsive {
+    overflow-x: auto; /* Adiciona a barra de rolagem horizontal */
+    width: 100%;
+    /* Melhora a experiência de rolagem em dispositivos touch */
+    -webkit-overflow-scrolling: touch; 
+}
+
+
+/* Em telas maiores, o layout volta ao normal */
 @media (min-width: 992px) {
     .ranking-layout {
-        /* A primeira coluna (tabela) ocupa 2/3 e a segunda (destaques) 1/3 */
         grid-template-columns: 2fr 1fr;
     }
 }
 
+/* O resto dos estilos de aparência da tabela permanecem os mesmos */
 #busca-escola {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-family: 'Poppins', sans-serif;
-    min-width: 200px; /* Garante um tamanho mínimo */
+    min-width: 200px;
 }
 
 .tabela-ranking {
     width: 100%;
-
-    min-width: 600px;
-
+    min-width: 600px; /* Força a tabela a ter uma largura mínima */
     border-collapse: collapse;
 }
 
@@ -550,6 +570,7 @@ body {
     padding: 15px 12px;
     text-align: left;
     border-bottom: 1px solid #eee;
+    white-space: nowrap; /* Impede que o texto longo quebre a linha */
 }
 
 .tabela-ranking thead {
@@ -567,14 +588,13 @@ body {
     background-color: var(--fundo-pagina);
 }
 
-/* Estilo de destaque para a linha da escola do usuário */
 .tabela-ranking tr.minha-escola {
-    background-color: #d4edda; /* Um verde claro para destaque */
+    background-color: #d4edda;
     font-weight: 700;
 }
 
 .tabela-ranking tr.minha-escola td {
-    color: #155724; /* Um verde escuro para o texto */
+    color: #155724;
 }
 
 .variacao {
@@ -582,17 +602,9 @@ body {
     text-align: center;
 }
 
-.variacao.subiu {
-    color: #28a745; /* Verde para subida */
-}
-
-.variacao.desceu {
-    color: #dc3545; /* Vermelho para descida */
-}
-
-.variacao.neutra {
-    color: var(--cinza-claro);
-}
+.variacao.subiu { color: #28a745; }
+.variacao.desceu { color: #dc3545; }
+.variacao.neutra { color: var(--cinza-claro); }
 
 .ranking-destaques-container h3 {
     margin-bottom: 10px;
@@ -810,5 +822,19 @@ body {
 
     .menu-toggle:checked + .hamburger-menu span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* Garante que o container não corte o overflow horizontal em telas pequenas */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: visible;
+        width: 100vw;
+        max-width: 100vw;
+    }
+    body {
+        overflow-x: auto;
     }
 }
