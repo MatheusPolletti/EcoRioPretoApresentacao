@@ -1,10 +1,9 @@
-# Protótipo Front-End do Sistema EcoRioPreto
+# Protótipo Front-End do Sistema EcoRio Preto
 
 Este projeto é a materialização de uma ideia concebida durante o IdeaTown, evento realizado no Parque Tecnológico de São José do Rio Preto em 2025. O repositório contém o protótipo front-end completo e navegável de um sistema de controle de lixo e incentivo à reciclagem, cujo objetivo é gamificar a sustentabilidade entre escolas.
 
 ![Status](https://img.shields.io/badge/status-prot%C3%B3tipo_funcional-green)
 ![Tecnologia](https://img.shields.io/badge/tecnologia-HTML%26CSS-blue)
-![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-lightgrey)
 
 ---
 
